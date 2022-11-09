@@ -48,14 +48,30 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted == true) {
 		video.muted = false
-		document.getElementById("mute").innerHTML = "Unmute"
-	}
-	if (video.muted == false) {
-		video.muted = true
 		document.getElementById("mute").innerHTML = "Mute"
+		console.log("Unmuting Video")
+	}
+	else {
+		video.muted = true
+		document.getElementById("mute").innerHTML = "Unmute"
+		console.log("Muting Video")
 	}
 });
 
+document.querySelector("#slider").addEventListener("click", function() {
+	console.log("Slider Used");
+	volume = this.value / 100
+	video.volume = volume
+	document.querySelector("#volume").innerHTML = volume * 100 + "%"
+});
+
+document.querySelector('#vintage').addEventListener("click", function() {
+	document.body.classList.add("oldSchool")
+});
+
+document.querySelector('#orig').addEventListener("click", function() {
+	document.body.classList.remove("oldSchool")
+});
 
 
 
