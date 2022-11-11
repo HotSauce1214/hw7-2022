@@ -35,7 +35,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Video");
-	if ((video.currentTime += 10) > video.duration) {
+	if ((video.currentTime += 10) >= video.duration) {
 		video.currentTime = 0
 		video.pause()
 	}
