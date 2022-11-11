@@ -35,12 +35,9 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Video");
-	if ((video.currentTime += 10) >= video.duration) {
+	video.currentTime += 10
+	if (video.currentTime >= video.duration) {
 		video.currentTime = 0
-		video.pause()
-	}
-	else {
-		video.currentTime += 10
 	}
 	console.log("Location is", video.currentTime)
 });
@@ -66,11 +63,11 @@ document.querySelector("#slider").addEventListener("click", function() {
 });
 
 document.querySelector('#vintage').addEventListener("click", function() {
-	document.body.classList.add("oldSchool")
+	document.body.classList.add('oldSchool')
 });
 
 document.querySelector('#orig').addEventListener("click", function() {
-	document.body.classList.remove("oldSchool")
+	document.body.classList.remove('oldSchool')
 });
 
 
